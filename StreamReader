@@ -1,0 +1,16 @@
+StreamReader _Reader = new StreamReader("values.db");
+
+string _line = "";
+int _INT = 0;
+
+while (_line != null){
+    
+    _line = _Reader.ReadLine();
+
+    if(_line != null)
+        
+        _INT = int.Parse(_line);
+        Console.WriteLine(_INT*_INT);
+
+
+}
