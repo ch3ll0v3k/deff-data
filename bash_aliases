@@ -36,6 +36,31 @@ alias _make_c#='function __make_c_sharp(){
 };
 __make_c_sharp '
 # -------------------------------
+# GIT
+
+function _InitGit(){
+
+    echo "# $1" >> README.md
+    git init
+    git add README.md
+    git commit -m "update"
+    git remote add origin https://github.com/ch3ll0v3k/$1
+    git push -u origin master
+
+}
+
+function _GitIt(){
+
+    git add .
+    git commit -m "upload"
+    git push origin master
+
+}
+# -------------------------------
+
+
+
+
 
 # ###################################################################################
 # Download file @ <H:M>
