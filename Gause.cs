@@ -5,6 +5,9 @@ namespace Knikker
     class Program
     {
         // =========================================================================
+        
+        // http://statanaliz.info/component/tags/tag/87-raspredelenie
+        
         // =========================================================================
         static void Main(string[] args)
         {
