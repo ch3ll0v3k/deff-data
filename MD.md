@@ -1,6 +1,6 @@
 - [ ] A
 - [x] B
-- [ ] C, ** format **, CDE
+[ ] C, ** format **, CDE
 - [x] D
 - [ ] E
 
