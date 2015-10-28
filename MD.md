@@ -1,8 +1,8 @@
-- [ ] A
-- [x] B
-- [ ] C, **format**, CDE
-- [x] D
-- [ ] E
+- [ ] A, "NO-FORMAT"
+- [x] B, **"BOLD"**
+- [ ] C, **format**
+- [x] D,
+- [ ] E,
 
 
 
