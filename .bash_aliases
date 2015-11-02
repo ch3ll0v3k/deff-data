@@ -1,19 +1,43 @@
+# -----------------------------------------------------------------------------------
+export HISTCONTROL=ignoreboth # remove dublicaten from history
+
+# -----------------------------------------------------------------------------------
+# Dir-Colors
 export LS_OPTIONS=" --color=auto"
-eval "`dircolors`"
-alias _l="ls $LS_OPTIONS"
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
+    alias _l='ls -lh $LS_OPTIONS'
+    alias _ll='ls -lah $LS_OPTIONS'
+    alias ls='ls $LS_OPTIONS'
+
+    alias dir='dir $LS_OPTIONS'
+    alias vdir='vdir $LS_OPTIONS'
+
+    alias grep='grep $LS_OPTIONS'
+    alias fgrep='fgrep $LS_OPTIONS'
+    alias egrep='egrep $LS_OPTIONS'
+
+fi
+
 # ------------------------------------------------------------------------------------------------
-alias _update="clear;sudo apt-get update "
-alias _upgrade="clear;sudo apt-get upgrade "
-alias _install="clear;sudo apt-get install "
+alias _update="clear; sudo apt-get update "
+alias _upgrade="clear; sudo apt-get upgrade "
+alias _install="clear; sudo apt-get install "
 alias _remove="clear; sudo apt-get remove "
-alias _cache_search="clear; sudo apt-cache search "
-alias _policy="clear; sudo apt-cache policy "
+alias _cache_search="clear; apt-cache search "
+alias _policy="clear; apt-cache policy "
 
 # -----------------------------------------------------------------------------------
 alias _edit_sources.list="sudo nano /etc/apt/sources.list"
 alias _edit_.bash_aliases="nano /home/toor/.bash_aliases"
 alias _edit_sites_enabled="sudo nano /etc/apache2/sites-enabled/000-default"
 alias _edit_php.ini="sudo nano /etc/php5/apache2/php.ini"
+
+alias _source='source /home/toor/.bash_aliases'
 
 # ###################################################################################
 # Sys info
@@ -40,11 +64,17 @@ __make_c_sharp '
 
 function _InitGit(){
 
+    if [ "$1" == "" ]; then
+        echo " _InitGit <repository name>";
+        return
+        
+    fi
+
     echo "# $1" >> README.md
     git init
     git add README.md
     git commit -m "update"
-    git remote add origin https://github.com/ch3ll0v3k/$1
+    git remote add origin "https://github.com/ch3ll0v3k/$1"
     git push -u origin master
 
 }
@@ -57,8 +87,42 @@ function _GitIt(){
 
 }
 # -------------------------------
+function _ip_loc(){
+
+    if [ "$1" == "" ]; then
+        echo "Usage: _ip_loc <eth[x]>"
+        return
+    fi
+
+    eth=$1
+        
+    /sbin/ifconfig "$eth" | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'
+    /sbin/ifconfig "$eth" | grep "inet " | sed s/"inet addr:"//i | sed s/"          "//i
+
+}
+# -------------------------------
+function _ip_inet(){
+
+    wget -qO- http://ipecho.net/plain
+    echo ""
+
+}
+# -------------------------------
+function _return_ip(){
+
+    wget -qO- http://ipecho.net/plain
+
+}
 
 
+# -------------------------------
+# -------------------------------
+
+
+
+
+
+# ###################################################################################
 
 
 
@@ -77,7 +141,6 @@ alias _scan_dlink="clear; nmap -Pn 192.168.0.50"
 
 
 alias _c="clear"
-alias _l="ls -lAh"
 alias _open_dir=" nautilus "
 
 alias _get_usb="dmesg | grep tty"
@@ -113,7 +176,7 @@ _PI_IP="192.168.0.21"
 _PCDUINO_IP="192.168.0.220"
 
 alias _SSH_TO_PI="ssh -X root@$_PI_IP"
-alias _SSH_TO_PCDUINO="ssh -X linaro@$_PCDUINO_IP"
+alias _SSH_TO_PCDUINO="ssh linaro@$_PCDUINO_IP -p 24500"
 
 # -----------------------------------------------------------------------------------
 alias _vnc_to_pi_0="xtightvncviewer -quality 7 -compresslevel 9 192.168.0.184:0"
@@ -140,7 +203,6 @@ alias _cura="cura --ini=/_tmx_/3d-print/Cura/test_profile.ini &"
 alias _serial="minicom -b 115200 -o -D /dev/ttyUSB0"
 
 # ----------------------------------------------------------------------------------- 
-
 alias _sqlmap="python /_tmx_/x/sqlmap-dev/sqlmap/sqlmap.py "
 
 
