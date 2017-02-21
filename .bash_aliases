@@ -2,6 +2,9 @@
 # sudo adduser ch3ll0v3k www-data
 # -----------------------------------------------------------------------------------
 alias _apache2_from_here=" php -S localhost:8080 "
+
+# git config --global credential.helper 'cache --timeout=3600' # 86400
+
 # -----------------------------------------------------------------------------------
 # sudo strace updatedb 2>&1 | grep -o "^open.*O_RDWR.*"
 
