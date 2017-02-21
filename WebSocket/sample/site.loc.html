@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <title>Page-Title</title>
+    <meta charset="utf-8"/>
+
+    <script type="text/javascript" src="js/tmx.websocket.v0.0.1.js"></script>
+
+    <script type="text/javascript">
+        
+        // ----------------------------------------------------
+        var sock;
+        window.addEventListener('load', function(){
+
+            // TmxWebSocket.newSocket();
+            
+            var sock_0 = new WebSocket('ws://176.112.204.78/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+            var sock_1 = new WebSocket('wss://176.112.204.78/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+
+            var sock_2 = new WebSocket('ws://176.112.204.78:9030/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+            var sock_3 = new WebSocket('wss://176.112.204.78:9030/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+
+
+            var sock_4 = new WebSocket('ws://zergo.ru/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+            var sock_5 = new WebSocket('wss://zergo.ru/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+
+            var sock_6 = new WebSocket('ws://zergo.ru:9030/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+            var sock_7 = new WebSocket('wss://zergo.ru:9030/api/v1/websocket'); // (ProxyPass /wss/ ws://zergo.ru:9000/)
+
+
+
+            // if( TmxWebSocket.WS != null ){
+
+                // console.log( TmxWebSocket.WS );
+
+                // TmxWebSocket.WS.send("TEST");
+                // TmxWebSocket.WS.send( form.elements[0].file );
+
+            // }
+
+        });
+
+        // ----------------------------------------------------
+
+    </script>
+
+</head>
+<body>
+<!-- ========================================================== -->
+
+
+<!-- ========================================================== -->
+</body>
+</html>
