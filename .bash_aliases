@@ -1,8 +1,84 @@
+# pavucontrol
+# sudo adduser ch3ll0v3k www-data
+# -----------------------------------------------------------------------------------
+alias _apache2_from_here=" php -S localhost:8080 "
+# -----------------------------------------------------------------------------------
+# sudo strace updatedb 2>&1 | grep -o "^open.*O_RDWR.*"
+
+# -----------------------------------------------------------------------------------
+alias _i386-elf-gcc="/m-sys/_soft/x86/dev-tools/cross-gcc/gcc/bin/i386-elf-gcc "
+alias _i386-elf-ld="/m-sys/_soft/x86/dev-tools/cross-gcc/gcc/i386-elf/bin/ld "
+# tune2fs -l /dev/sda1 **OR** /dev/sdb1*  | grep 'Filesystem created:'
+
+# mknod /dev/ttyUSB0 c 188 0
+# u == unbufferd
+# c == ???
 # -----------------------------------------------------------------------------------
 # sudo sed -i 's/geteuid/getppid/' /usr/bin/vlc
 #if [[ $- =~ "i" ]]; then
 #    echo "scp is now save!!!"
 #fi
+
+# -----------------------------------------------------------------------------------
+alias _feh_l="feh -l "
+alias _feh_info=" identify -verbose "
+
+alias _get_mod="stat -c '|%A|%a => [%n]' "
+# -----------------------------------------------------------------------------------
+alias _get_sse2="grep sse2 /proc/cpuinfo"
+
+# -----------------------------------------------------------------------------------
+# http://www.commandlinefu.com/commands/browse
+# -----------------------------------------------------------------------------------
+#cat script.sh | ssh some_server bash -s - <arguments> 
+#disown -a && exit // Close shell keeping all subprocess running 
+
+# -----------------------------------------------------------------------------------
+# amixer set 'Master' 10%+ - to increase max sound 10%
+# amixer set 'Master' 10%- - to decrease max sound 10%
+# amixer set 'Master' 10% - to get 10% of the max sound
+# amixer set 'Master' 80% - to get 80% of the max sound
+
+#If you want to set the volume to other than 'Master', check the list by:
+#amixer scontrols
+# -----------------------------------------------------------------------------------
+alias _VBOX="virtualbox --debug "
+alias _equalizer_qt="/m-sys/prog/python/edu/audio/_pyaudio/equalizer_qt"
+
+
+function equalizer(){
+    VARS=$*;
+    cd /m-sys/prog/python/edu/audio/equalizer/
+    ./equalizer $VARS;
+    ls -lah ./out
+
+}
+
+# -----------------------------------------------------------------------------------
+alias _SIGN_AND_ALIGN="/m-sys/prog/android/tmx-tools/SIGN-AND-ALIGN.sh "
+# -----------------------------------------------------------------------------------
+alias _video_spec="lshw -numeric -C display"
+# -----------------------------------------------------------------------------------
+alias _speed_test_500MB="wget http://speedtest.sea01.softlayer.com/downloads/test1000.zip -O /dev/null"
+alias _speed_test_100MB="wget http://speedtest.sea01.softlayer.com/downloads/test100.zip -O /dev/null"
+alias _speed_test_10MB="wget http://speedtest.sea01.softlayer.com/downloads/test10.zip -O /dev/null"
+
+#"curl -o /dev/null http://*** "
+
+# -----------------------------------------------------------------------------------
+# NOTIFY
+
+alias _NOTIFY="/m-sys/sys-tools/python/sounds/NOTIFY "
+
+# -----------------------------------------------------------------------------------
+# WATCHES
+
+alias _watch_statement="watch -c -d -n 2 "
+alias _watch_sensors="watch -c -d -n 2 sensors"
+
+# -----------------------------------------------------------------------------------
+alias _vlc="vlc $1 &> /dev/null "
+
 # -----------------------------------------------------------------------------------
 export HISTCONTROL=ignoreboth # remove dublicaten from history
 export SWIFT_HOME=/m-sys/AI/tts/Cepstral/prog/
@@ -20,6 +96,11 @@ export CLASSPATH=${CLASSPATH}:/m-sys/prog/android/android-sdk
 # pacmd list-sinks
 
 #-----------------------------------------------------------------------------------
+# Archives
+
+alias _tar_compress_this_dir='tar -cf - . | gzip -v9 > "${PWD##*/}.tar.gz"'
+
+#-----------------------------------------------------------------------------------
 # chromium --version [Chromium 37.0.2062.120 Built on Debian 7.6, running on Debian 7.9]
 #
 # chromium --allow-file-access-from-files  
@@ -29,6 +110,8 @@ export CLASSPATH=${CLASSPATH}:/m-sys/prog/android/android-sdk
 alias _dev_chrome="chromium  --allow-file-access-from-files "
 
 #-----------------------------------------------------------------------------------
+alias _ADD_IP="/m-sys/x/IPs/ADD_IP"
+
 #-----------------------------------------------------------------------------------
 # ANDROID
 
@@ -75,7 +158,12 @@ alias _ufw_reset="sudo ufw reset "
 # -----------------------------------------------------------------------------------
 # Fast CD
 
+# TMP
+
+alias _cd_zergo_www="cd /m-sys/prog/web/work/zergo/zergo.loc/www/ "
+
 # Glob
+alias _cd_osdev="cd /m-sys/prog-proj/OS-dev/ "
 alias _cd_prog="cd /m-sys/prog/ "
 alias _cd_prog-proj="cd /m-sys/prog-proj/ "
 
@@ -91,27 +179,29 @@ alias _cd_mql5="cd /m-sys/prog/mql5/ "
 alias _cd_music="cd /m-sys/music/ "
 
 # Predeff
-alias _cd_Desktop="cd /home/toor/Desktop "
-alias _cd_Downloads="cd /home/toor/Downloads "
+alias _cd_Desktop="cd $HOME/Desktop "
+alias _cd_Desktop="cd $HOME/Pictures "
+alias _cd_Downloads="cd $HOME/Downloads "
 
-alias _cd_sublime_packages="cd ~/.config/sublime-text-3/Packages/"
-
+alias _cd_sublime_packages="cd $HOME/.config/sublime-text-3/Packages/"
 
 alias _force_fsck_reboot="sudo touch /forcefsck && sudo reboot"
 # -----------------------------------------------------------------------------------
 # /m-sys/sys-tools/*
 
 alias _replace_spaces="/m-sys/sys-tools/python/replace_spaces.py"
+alias _audio_converter="/m-sys/sys-tools/python/audio_converter.py"
 
 # -----------------------------------------------------------------------------------
 alias _youtube-dl="/m-sys/_soft/x86/youtube-dl/youtube-dl "
-alias _youtube-dl-audio="/m-sys/_soft/x86/youtube-dl/youtube-dl --prefer-ffmpeg --extract-audio --audio-format mp3  --audio-quality 0 "
-
+alias _youtube-dl-audio="/m-sys/_soft/x86/youtube-dl/youtube-dl --prefer-ffmpeg --extract-audio --audio-format mp3 --audio-quality 0 "
+# _youtube-dl --audio-format mp3 --audio-quality 0 "http://link"
 # -----------------------------------------------------------------------------------
 # chorts
 
 alias _subl="subl "
 alias _play_music="mpg123 -Ccz /m-sys/music/chill_outs/*.mp3 "
+alias _play="mpg123 -Ccz ./*.mp3 "
 # -----------------------------------------------------------------------------------
 # Dir-Colors
 export LS_OPTIONS=" --color=auto"
@@ -130,26 +220,34 @@ if [ -x /usr/bin/dircolors ]; then
 
     alias _ln='ls -lah | nl -v 0 -w 4 -s "| "'    
     alias _l='ls -lah $LS_OPTIONS'
-    alias _l_by_size='ls -lAh | sort -k2,4 '
-    alias _ll_by_size='ls -lah $LS_OPTIONS | sort -k2,4 '
     alias _top="top -d 1 "
     alias _IT_WORKS="echo 'IT WORKS'"
 
 fi
 
+# alias _l_by_size='ls -lAh $1 | sort -k2,4 '
+function _l_by_size(){
+    echo " _l_by_size: [$1]"; ls -lAh $1 $LS_OPTIONS | sort -k2,4;
+
+}
+
+
+
 # ------------------------------------------------------------------------------------------------
 alias _UNIX_STAMP="date +%s "
 
-alias _ADD_TO_CHILLOUT_LIST="/m-sys/music/chill-out/add.sh "
+alias _PUT_TO_CHILLOUT_LIST="/m-sys/music/chill-out/add.sh $*"
+alias _EDIT_CHILLOUT_LIST=" nano /m-sys/music/chill-out/chill-out.list"
 
 # ------------------------------------------------------------------------------------------------
-alias _update="clear; sudo apt-get update "
-alias _upgrade="clear; sudo apt-get upgrade "
-alias _install="clear; sudo apt-get install "
-alias _remove="clear; sudo apt-get remove "
-alias _cache_search="clear; apt-cache search "
-alias _policy="clear; apt-cache policy "
+alias _update="sudo apt-get update "
+alias _upgrade="sudo apt-get upgrade "
+alias _install="sudo apt-get install "
+alias _remove="sudo apt-get remove "
+alias _cache_search="apt-cache search "
+alias _policy="apt-cache policy "
 
+alias _dpkg_search="dpkg --get-selections | grep -v deinstall | grep "
 
 # -----------------------------------------------------------------------------------
 # Display all soundcards and digital audio devices -> "arecord -l"
@@ -162,17 +260,14 @@ alias _get_audio_devs="aplay -l &&  arecord -l "
 
 # -----------------------------------------------------------------------------------
 alias _edit_sources.list="sudo nano /etc/apt/sources.list"
-alias _edit_.bash_aliases="nano /home/toor/.bash_aliases"
-alias _edit_sites_enabled="sudo nano /etc/apache2/sites-enabled/000-default"
-alias _edit_php.ini="sudo nano /etc/php5/apache2/php.ini"
-
-alias _source='source /home/toor/.bash_aliases'
 alias _ifconfig='/sbin/ifconfig'
-
 alias _traceroute="traceroute -w 0.25 -q 1 "
 
+alias _edit_.bashrc="nano $HOME/.bash_aliases"
+alias _source_.bashrc='source $HOME/.bash_aliases'
 
 
+alias _history_search="cat $HOME/.bash_history | grep " 
 # ###################################################################################
 # Sys info
 
@@ -187,15 +282,12 @@ alias _get_mod="lsmod | grep "
 function _whois_this(){
     echo "-------------------------------------------";
     echo "THIS: ($1)";
-    whois "$1" | grep "Organization:\|Address:\|Country:\|StateProv:"
+    whois "$1" | grep -i "Organization:\|Address:\|Country:\|StateProv:"
     echo "-------------------------------------------";
 
 }
 
 # ------------------------------
-# mkdir {dir} && cd {dir}
-
-# _mkcd();
 function _mkcd(){ 
     mkdir $1 && cd $1; 
 }
@@ -231,7 +323,7 @@ function _InitGit(){
 function _GitIt(){
 
     git add .
-    git commit -m "update"
+    git commit -m "descr:[$*]"
     git push origin master
 
 }
@@ -307,7 +399,8 @@ function _get_usb_devices(){
 # -------------------------------
 function _calc(){
 
-    gnome-calculator -s $*
+    #python -c "print(float($*))"
+    python -c "print($*)"
 
 }
 # -------------------------------
@@ -317,7 +410,9 @@ function _calc(){
 
 # ###################################################################################
 # SYS-TOOLS
-alias _POST_DATA="/m-sys/x/python/post-data/post-data "
+
+alias _POST_DATA_post="/m-sys/x/python/post-data/post-data "
+alias _POST_DATA_get="/m-sys/x/python/post-data/get-data "
 alias _UNIXSTAMP_TO_DATE="/m-sys/sys-tools/python/unixstamp_to_date.py "
 
 alias _GET_ISS_PREDICTION='wget -o /dev/null "http://api.open-notify.org/iss-pass.json?lat=51.96&lon=3.6&n=10" -O LAT.cords &&  python -m json.tool LAT.cords | grep risetime'
@@ -327,9 +422,6 @@ alias _GET_ISS_PREDICTION='wget -o /dev/null "http://api.open-notify.org/iss-pas
 
 alias _adb_start_server="sudo /m-sys/prog/android/android-sdk/platform-tools/adb start-server"
 alias _adb="/m-sys/prog/android/android-sdk/platform-tools/adb"
-
-
-
 
 # ###################################################################################
 # Download file @ <H:M>
@@ -348,26 +440,39 @@ alias _scan_dlink="clear; nmap -Pn 192.168.0.50"
 alias _c="clear"
 alias _cl="clear && ls -lah"
 
+alias _iface="/sbin/ifconfig | grep 'inet addr\|HWaddr'"
+
 alias _open_dir=" nautilus "
 
 alias _get_usb="dmesg | grep tty"
 alias _get_all_tty="python -m serial.tools.list_ports"
 alias _get_busy_tyy='ps -ef | grep tty && echo " \n kill nedet PID "'
 
+# NETWORK
 alias _restart_network_manager='sudo service network-manager restart'
 alias _restart_networking='sudo service networking restart'
 
-alias _app_start="sudo service apache2 start"
-alias _app_stop="sudo service apache2 stop"
-alias _app_restart="sudo service apache2 stop && sleep 3  && sudo service apache2 start"
+# ---------------------------------------------------------------------
+# APACHE
+alias _apache2_status="sudo service apache2 status"
+alias _apache2_start="sudo service apache2 start"
+alias _apache2_stop="sudo service apache2 stop"
+alias _apache2_restart="sudo service apache2 stop && sleep 1 && sudo service apache2 start"
+alias _edit_sites_enabled="sudo nano /etc/apache2/sites-enabled/000-default"
+alias _edit_php.ini="sudo nano /etc/php5/apache2/php.ini"
 
+# MYSQL
 alias _mysql_start="sudo service mysql start"
 alias _mysql_stop="sudo service mysql stop"
-alias _mysql_restart="sudo service mysql stop && sleep 3 && sudo service mysql start"
+alias _mysql_restart="sudo service mysql stop && sleep 1 && sudo service mysql start"
 
+# WEB-ALL
+alias _web_all_start="sudo service mysql start && sudo service apache2 start"
+alias _web_all_stop="sudo service mysql stop && sudo service apache2 stop"
+alias _web_all_restart="sudo service mysql restart && sudo service apache2 restart"
 
-alias _web_services_start="sudo service mysql start && sudo service apache2 start"
-alias _web_services_stop="sudo service mysql stop && sudo service apache2 stop"
+# ---------------------------------------------------------------------
+alias _im_watching="echo 'I am watching you !!!' | sudo wall -n"
 
 # -----------------------------------------------------------------------------------
 # Make a backup of backups while preserving 
@@ -379,19 +484,25 @@ alias _radio_zenfm='mpg123 "http://lb.zenfm.be/zenfm.mp3" '
 alias _radio_brussel='mpg123 "http://mp3.streampower.be/stubru-low.mp3" '
 
 # -----------------------------------------------------------------------------------
-# RPI-BOT
-_PI_IP="192.168.0.21"
-_PCDUINO_IP="192.168.0.111"
+_TENBIT_IP="31.24.227.118"
+alias _SSH_TO_TENBIT.NEt="ssh root@$_TENBIT_IP";
 
 NANO="root@$_PCDUINO_IP"
 
+_PI_IP="192.168.0.21"
 alias _SSH_TO_PI=" ssh -X root@$_PI_IP "
 alias _SSH_TO_PI_RSA_21=" ssh -X -i /m-sys/linux/ssh/id_rsa root@192.168.0.21 "
 alias _SSH_TO_PI_RSA_22=" ssh -X -i /m-sys/linux/ssh/id_rsa root@192.168.0.22 "
 
+_PCDUINO_IP="192.168.0.112"
 alias _SSH_TO_PCDUINO=" ssh root@$_PCDUINO_IP "
 
-alias _chroot2pi=' sudo /m-sys/hardware/m-c/RPI-all/chroot-in2-pi/chroot_In2_pi.sh'
+_ZERGO_IP="176.112.204.78";
+
+alias _SSH_TO_ZERGO="ssh root@$_ZERGO_IP"
+# -----------------------------------------------------------------------------------
+alias _chroot2pi=' sudo /m-sys/electro/Micro-Cs/RPI-all/chroot-in2-pi/chroot_In2_pi.sh';
+
 # -----------------------------------------------------------------------------------
 alias _vnc_to_pi_0="xtightvncviewer -quality 7 -compresslevel 9 192.168.0.184:0"
 alias _vnc_to_pi_1="xtightvncviewer -quality 7 -compresslevel 9 192.168.0.184:1"
@@ -408,12 +519,21 @@ alias _fritzing="/_tmx_/electro/fritzing/fritzing-0.7.0b.linux.i386/Fritzing "
 # -----------------------------------------------------------------------------------
 alias _vlc_cam=" vlc v4l2:///dev/video0 "
 
-alias _slicer="/m-sys/3d-print/3d-print/Slic3r/bin/slic3r --load='/m-sys/3d-print/3d-print/Slic3r/SLK_config.ini' &"
+# alias _slicer="/m-sys/3d-print/3d-print/Slic3r/bin/slic3r --load='/m-sys/3d-print/3d-print/Slic3r/SLK_config.ini' &"
+
+function _slic3r_r(){
+    cd /m-sys/3d-print/tools/Slic3r/Slic3r/bin/
+    ./slic3r --load="../Main.Tmx.ini"
+
+}
+
 alias _repetier_host="/_tmx_/3d-print/Repetier-Host/RepetierHost/repetierHost"
 alias _cura="cura --ini=/_tmx_/3d-print/Cura/test_profile.ini &"
 
 # -----------------------------------------------------------------------------------
 alias _serial="sudo minicom -b 115200 -o -D /dev/ttyUSB0 "
+
+alias _mpg123="mpg123 -C "
 
 # ----------------------------------------------------------------------------------- 
 alias _sqlmap="python /m-sys/x/web/sqlmap/sqlmap.py "
