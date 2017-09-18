@@ -1,6 +1,10 @@
 alias _radio_zenfm='mpg123 "http://lb.zenfm.be/zenfm.mp3" '
 alias _radio_brussel='mpg123 "http://mp3.streampower.be/stubru-low.mp3" '
 
+alias _radio_smoothjazzflorida.com='mpg123 "http://us1.internet-radio.com:11094/" '
+alias _radio_smoothjazztampa.com='mpg123 "http://us3.internet-radio.com:8007/" '
+alias _radio_megatoncaferadio.com='mpg123 "http://us2.internet-radio.com:8443/" '
+
 alias _radio_ambiant='mpg123 "http://uk2.internet-radio.com:31491/" '
 alias _radio_Buddhapillow=' mpg123 "http://uk3.internet-radio.com:8399/live" '
 alias _radio_FOREX_CHILL_MUSIC=' mpg123 "http://aska.ru-hoster.com:8053/autodj" '
@@ -16,4 +20,3 @@ alias _radio_CeltCast=' mpg123 "http://178.20.171.32:8086/" '
 alias _radio_Yimago_Radio_4=' mpg123 "http://158.69.227.214:8014/autodj" '
 alias _radio_Dance_Wave=' mpg123 "http://stream2.dancewave.online:8080/dance.mp3" '
 alias _radio_IBIZA_LIVE_RADIO=' mpg123 "http://198.105.214.140:6571/listen.pls?sid=1" '
-
