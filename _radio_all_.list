@@ -1,0 +1,19 @@
+alias _radio_zenfm='mpg123 "http://lb.zenfm.be/zenfm.mp3" '
+alias _radio_brussel='mpg123 "http://mp3.streampower.be/stubru-low.mp3" '
+
+alias _radio_ambiant='mpg123 "http://uk2.internet-radio.com:31491/" '
+alias _radio_Buddhapillow=' mpg123 "http://uk3.internet-radio.com:8399/live" '
+alias _radio_FOREX_CHILL_MUSIC=' mpg123 "http://aska.ru-hoster.com:8053/autodj" '
+alias _radio_MILANO_LOUNGE=' mpg123 "http://chandra.shoutca.st:9739/autodj" '
+alias _radio_Dance_UK=' mpg123 "http://uk2.internet-radio.com:8024/" '
+alias _radio_Undergroundfm=' mpg123 "http://uk1.internet-radio.com:8118/" '
+alias _radio_2SM_1269AM_Sydney=' mpg123 "http://206.217.202.1:7100/" '
+alias _radio_Gurbani_Kirtan_FM_24_7=' mpg123 "http://162.255.163.64:8006/listen.pls?sid=1" '
+alias _radio_Bassdrive_Worldwide_Drum_and_Bass=' mpg123 "http://50.7.70.58:8200/" '
+
+alias _radio_Highlander_Radio_Live=' mpg123 "http://50.7.71.27:9657/" '
+alias _radio_CeltCast=' mpg123 "http://178.20.171.32:8086/" '
+alias _radio_Yimago_Radio_4=' mpg123 "http://158.69.227.214:8014/autodj" '
+alias _radio_Dance_Wave=' mpg123 "http://stream2.dancewave.online:8080/dance.mp3" '
+alias _radio_IBIZA_LIVE_RADIO=' mpg123 "http://198.105.214.140:6571/listen.pls?sid=1" '
+
